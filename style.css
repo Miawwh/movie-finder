@@ -1,0 +1,36 @@
+body {
+  background-color: rgba(0, 0, 0);
+  font-family: "TikTok Sans", sans-serif;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: url(image.png) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 20%,
+    rgba(0, 0, 0, 0.2) 80%
+  );
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.bi-star-fill {
+  color: #ffd700;
+}
