@@ -16,13 +16,14 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 0;
   background: linear-gradient(
     to top,
+    rgba(0, 0, 0, 1) 0%,
     rgba(0, 0, 0, 0.85) 20%,
-    rgba(0, 0, 0, 0.2) 80%
+    rgba(0, 0, 0, 0.2) 80%,
+    rgba(0, 0, 0, 1) 100%
   );
+  z-index: 0;
 }
 
 .hero-section .container {

@@ -1,11 +1,7 @@
 const form = document.querySelector("#search-form");
 const listFilm = document.querySelector("#list-film");
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  listFilm.innerHTML = "";
-  await getFilm();
-});
+const input = document.querySelector("input");
+const childListFilm = listFilm.children;
 
 const getFilm = async () => {
   try {
@@ -14,10 +10,13 @@ const getFilm = async () => {
       params: { q: keyword },
     };
     const req = await axios.get(`https://api.tvmaze.com/search/shows`, config);
-    console.log(req);
     getImage(req.data);
   } catch (error) {
-    console.log(error);
+    listFilm.querySelector("h2").remove();
+    const textError = document.createElement("h3");
+    textError.classList.add("text-white", "py-2");
+    textError.innerText = `Maaf, kami tidak dapat mengambil data film saat ini. Coba lagi nanti ya!`;
+    listFilm.append(textError);
   }
 };
 
@@ -61,3 +60,27 @@ const getImage = (shows) => {
     }
   }
 };
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (input.value === "") {
+    return;
+  }
+
+  listFilm.innerHTML = "";
+
+  const resultInput = document.createElement("h2");
+  resultInput.classList.add("text-white");
+  resultInput.innerText = `Hasil pencarian untuk: "${input.value.trim()}"`;
+  listFilm.append(resultInput);
+
+  await getFilm();
+
+  if (childListFilm.length === 1 && childListFilm[0].tagName === "H2") {
+    const textNoFoundFilm = document.createElement("h3");
+    textNoFoundFilm.classList.add("text-warning", "py-2");
+    textNoFoundFilm.innerText = `Hasil untuk "${input.value.trim()}" tidak ditemukan. Coba kata kunci lain ya!`;
+    listFilm.querySelector("h2").remove();
+    listFilm.append(textNoFoundFilm);
+  }
+});
