@@ -29,7 +29,7 @@ const getImage = (shows) => {
       result.show.rating.average
     ) {
       const img = document.createElement("img");
-      img.src = result.show.image.medium;
+      img.src = result.show.image.original;
       img.classList.add("card-img-top", "rounded");
       const linkFilm = document.createElement("a");
       linkFilm.href = result.show.url;
