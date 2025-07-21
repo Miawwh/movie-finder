@@ -1,6 +1,4 @@
-Tentu! Berikut adalah versi lengkap dalam bahasa Inggris yang bisa langsung kamu salin dan tempel ke dalam file `README.md` kamu:
 
----
 
 # 🎬 Movie Finder
 
@@ -12,7 +10,7 @@ This mini project was built using **HTML**, **CSS**, **Bootstrap 5**, and **Java
 
 ## 🌐 Live Preview
 
-You can check out the project [here](https://your-demo-link-if-any.com)
+You can check out the project [here](https://miawwh.github.io/movie-finder/)
 
 > *Or clone the repo and run it locally (see below).*
 
@@ -99,8 +97,7 @@ movie-finder/
 
 ## 📬 Feedback or Questions?
 
-Feel free to open an issue or start a discussion on this repo.
+Feel free to open an issue or start a discussion on this repo
 
----
 
-Let me know if you’d like this markdown versi lengkapnya dijadikan file juga.
+
